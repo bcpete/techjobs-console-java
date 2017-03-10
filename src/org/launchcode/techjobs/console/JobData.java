@@ -93,7 +93,11 @@ public class    JobData {
             for(String key : entry.keySet()){
                 String lowerCaseValue = entry.get(key).toLowerCase();
                 if (lowerCaseValue.contains(value.toLowerCase())){
-                    jobs.add(entry);
+                    if (jobs.contains(entry)){
+                        break;
+                    }else{
+                        jobs.add(entry);
+                    }
                 }
             }
         }
